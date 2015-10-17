@@ -1,4 +1,4 @@
-var d20 = require('d20');
+var d20 = require('d20')
 
 module.exports = {
     Roll: function (message, bot) {
