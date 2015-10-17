@@ -1,15 +1,15 @@
 var Discord = require('discord.js');
-var http = require('http');
+// var http = require('http');
 var cats = require('cat-ascii-faces');
 var rest = require('restler');
 var highroller = require('./highroller.js')
 
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("I'm a high roller.\n");
-});
+// var server = http.createServer(function (request, response) {
+//   response.writeHead(200, {"Content-Type": "text/plain"});
+//   response.end("I'm a high roller.\n");
+// });
 
-server.listen(80);
+// server.listen(80);
 
 var mybot = new Discord.Client();
 
