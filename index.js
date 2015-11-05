@@ -14,7 +14,7 @@ console.log('Server running at http://127.0.0.1:8080/');
 var mybot = new Discord.Client();
 
 mybot.on("ready", function() {
-    mybot.sendMessage(mybot.getChannel('name', 'general'), 'MY TIME IS HERE.');
+    mybot.sendMessage(mybot.getChannel('name', 'general'), 'I awaken.');
 });
 
 mybot.on("disconnected", function() {
