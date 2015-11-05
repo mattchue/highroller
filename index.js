@@ -1,20 +1,28 @@
 var Discord = require('discord.js');
-// var http = require('http');
+var http = require('http');
 var cats = require('cat-ascii-faces');
 var rest = require('restler');
 var highroller = require('./highroller.js')
 
-// var server = http.createServer(function (request, response) {
-//   response.writeHead(200, {"Content-Type": "text/plain"});
-//   response.end("I'm a high roller.\n");
-// });
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end("I'm a high roller\n");
+}).listen(8080, "127.0.0.1");
 
-// server.listen(80);
+console.log('Server running at http://127.0.0.1:8080/');
 
 var mybot = new Discord.Client();
 
 mybot.on("ready", function() {
-    mybot.sendMessage(mybot.getChannel('name', 'general'), 'I awaken.');
+    mybot.sendMessage(mybot.getChannel('name', 'general'), 'MY TIME IS HERE.');
+});
+
+mybot.on("disconnected", function() {
+    mybot.sendMessage(mybot.getChannel('name', 'general'), 'I sleep.');
+});
+
+mybot.on("error", function() {
+    mybot.sendMessage(mybot.getChannel('name', 'general'), 'I have encountered an unhandled error in your request..');
 });
 
 mybot.on("message", function (message) {
@@ -39,6 +47,10 @@ mybot.on("message", function (message) {
 
     if (message.content === "!meow") {
         mybot.reply(message, cats());
+    }
+    
+    if (message.content === "what") {
+        mybot.reply(message, 'Hail Satan.');
     }
     
     if (message.content === "!ping") {
