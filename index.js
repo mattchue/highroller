@@ -6,10 +6,10 @@ var highroller = require('./highroller.js')
 
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end("I'm a high roller\n");
-}).listen(8080, "107.170.203.175");
+  res.end("I'm a high roller.\n");
+}).listen(80, "107.170.203.175");
 
-console.log('Server running at http://107.170.203.175:8080/');
+console.log('Server running at http://107.170.203.175:80/');
 
 var mybot = new Discord.Client();
 
